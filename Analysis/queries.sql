@@ -25,3 +25,12 @@ employees.first_name AS "First Name"
 FROM dept_manager
 INNER JOIN employees ON dept_manager.emp_no = employees.emp_no
 INNER JOIN departments ON dept_manager.dept_no = departments.dept_no;
+
+--List the department of each employee incorporating employee number, last name, first name, and department name
+SELECT departments.dept_name AS "Department Name",
+dept_emp.emp_no AS "Employee Number",
+employees.last_name AS "Last Name",
+employees.first_name AS "First Name"
+FROM dept_emp
+INNER JOIN employees ON dept_emp.emp_no = employees.emp_no
+INNER JOIN departments ON dept_emp.dept_no = departments.dept_no;
